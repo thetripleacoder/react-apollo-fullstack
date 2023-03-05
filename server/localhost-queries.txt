@@ -1,0 +1,35 @@
+query  {
+  getAllPosts {
+    id
+    title
+    description
+  }
+
+  # getPost(id: "640396dfd10ea0ecae8c5e98") {
+  #   title
+  #   description
+  # }
+
+}
+
+mutation {
+  # createPost(post: {
+  #   title: "This is second post"
+  #   description: "This is the description"
+  # }) {
+  #   id
+  #   title
+  #   description
+  # }
+
+  deletePost(id: "640396dfd10ea0ecae8c5e98")
+
+   updatePost(id: "6403983dd10ea0ecae8c5e9c", post: {
+    title: "New second post title"
+    description: "new description" // can remove this if has no update
+  }) {
+    id
+    title
+    description
+  }
+}
