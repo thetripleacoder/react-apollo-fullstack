@@ -27,15 +27,14 @@ async function startServer() {
   // Same ApolloServer initialization as before, plus the drain plugin
   // for our httpServer.
   const apolloServer =
-    new ApolloServer<
-      MyContext>
-      ({
-        // typeDefs: typeDefs,
-        // resolvers: resolvers
-        typeDefs,
-        resolvers,
-        plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
-      });
+    new ApolloServer({
+      // typeDefs: typeDefs,
+      // resolvers: resolvers
+      // csrfPrevention: false,
+      typeDefs,
+      resolvers,
+      plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
+    });
 
   // RECOMMENDED: start before listening any port
   await apolloServer.start();
@@ -43,8 +42,13 @@ async function startServer() {
   // apolloServer.applyMiddleware({ app: app, path: '/truly' });
   // Set up our Express middleware to handle CORS, body parsing,
   // and our expressMiddleware function.
+  // const newCors = cors<cors.CorsRequest>()
+  // const corsOptions = {
+  //   origin: ['http://localhost:3000/', "https://studio.apollographql.com"],
+  // credentials: true
+  // }
   app.use(
-    '/truly',
+    '/',
     cors<cors.CorsRequest>(),
     bodyParser.json(),
     // expressMiddleware accepts the same arguments:
@@ -56,11 +60,7 @@ async function startServer() {
   );
 
 
-  // // express routes
-  app.use((req, res) => {
-    res.send('Hello from express apollo server');
-    console.log('ok');
-  });
+
 
   // inside async function, we can use await
   await mongoose.connect('mongodb://localhost:27017/post_db', {

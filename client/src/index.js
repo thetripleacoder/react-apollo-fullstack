@@ -14,25 +14,27 @@ import {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const client = new ApolloClient({
-  mode: 'no-cors',
   uri: 'http://localhost:4000/',
   cache: new InMemoryCache(),
+  // fetchOptions: {
+  //   mode: 'no-cors',
+  // },
 });
 
-client
-  .query({
-    query: gql`
-      query getAllPosts {
-        locations {
-          id
-          name
-          description
-          photo
-        }
-      }
-    `,
-  })
-  .then((result) => console.log(result));
+// query with plain JavaScript
+// client
+//   .query({
+//     query: gql`
+//       query GetAllPosts {
+//         getAllPosts {
+//           id
+//           title
+//           description
+//         }
+//       }
+//     `,
+//   })
+//   .then((result) => console.log(result));
 
 root.render(
   <ApolloProvider client={client}>
