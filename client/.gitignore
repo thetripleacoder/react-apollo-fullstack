@@ -25,3 +25,6 @@ yarn-error.log*
 # Docker
 Dockerfile
 Dockerfile-deploy
+
+# Markdowns
+Sample_README.md

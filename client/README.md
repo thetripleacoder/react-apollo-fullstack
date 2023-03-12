@@ -1,27 +1,4 @@
-# Client
-
-## Installation
-
-1. Run `npm i` to install `npm` packages
-2. Run `npm run prepare` to install `husky`
-
-## Building & Deploying Updates to Staging
-
-1. Go to **CI/CD > Pipelines**. Look for the job that contains the changes you want to build and deploy.
-2. Click the Play button next to the `build_galileo_client` job.
-3. Wait for the job to finish.
-4. When the `build_galileo_client` job is finished, the `deploy:galileo_client:stage` job will automatically be run next.
-5. Once the `deploy:galileo_client:stage` job is finished, verify changes in staging.
-
-## Building & Deploying Updates to Production
-
-1. Go to **CI/CD > Pipelines**. Look for the job that contains the changes you want to build and deploy.
-2. CLick the Play button next to the `build_galileo_client` job.
-3. Wait for the job to finish.
-4. When the `build_galileo_client` job is finsihed, click the Play button next to the `deploy:galileo_client:prod` job to deploy our updates.
-5. Once the `deploy:galileo_client:prod` job is finished, verify your changes in production.
-
-# Getting Started with Create React App
+# Client# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
