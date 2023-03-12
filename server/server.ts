@@ -63,9 +63,9 @@ async function startServer() {
 
 
   // inside async function, we can use await
-  await mongoose.connect('mongodb://localhost:27017/post_db', {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
+  await mongoose.connect('mongodb://127.0.0.1/post_db', {
+    // useUnifiedTopology: true,
+    // useNewUrlParser: true,
   } as ConnectOptions)
     .then((res) => {
       console.log(
