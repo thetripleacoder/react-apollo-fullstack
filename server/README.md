@@ -15,7 +15,7 @@ Fix: (https://www.mongodb.com/community/forums/t/mongoserverselectionerror-conne
 Replace MongoDB connection url from
 
 ```
-'mongodb://127.0.0.1/post_db'
+await mongoose.connect('mongodb://localhost:27017/post_db', ...
 ```
 
 to
